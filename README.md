@@ -18,7 +18,8 @@ Take a look at the "SSL Config" tutorials (SSL Config for Nginx as Reverse Proxy
 
 ### Links: 
 [Ubuntu AWS Tutorial](https://blog.cloudboost.io/setting-up-an-https-sever-with-node-amazon-ec2-nginx-and-lets-encrypt-46f869159469?gi=b9499d469c98)
-[SSL Config for Nginx as Reverse Proxy](docs/SSLReverseProxy.md)
+[SSL Config for Nginx as Reverse Proxy](docs/SSLNginxReverseProxy.md)
+[SSL Config for Node](docs/SSLNode.md)
 =======
 #Ransomware and Cryptography!
 ##CECS 378 Nikki Nguyen & Jasmin Agustin
