@@ -17,13 +17,15 @@ Next, use "Let's Encrypt" to setup a free certificate (all instructions on Let's
 Take a look at the "SSL Config" tutorials (SSL Config for Nginx as Reverse Proxy or SSL Config for Node).
 
 ### Links: 
- [Ubuntu AWS Tutorial](https://blog.cloudboost.io/setting-up-an-https-sever-with-node-amazon-ec2-nginx-and-lets-encrypt-46f869159469?gi=b9499d469c98)
- [SSL Config for Nginx as Reverse Proxy](ransomware_cecs378/SSLNginxReverseProxy.md)
- [SSL Config for Node](ransomware_cecs378/SSLNode.md)
+[Ubuntu AWS Tutorial](https://blog.cloudboost.io/setting-up-an-https-sever-with-node-amazon-ec2-nginx-and-lets-encrypt-46f869159469?gi=b9499d469c98)<br />
+[SSL Config for Nginx as Reverse Proxy](https://github.com/NikkiNgNguyen/ransomware_cecs378/blob/master/SSLNginxReverseProxy.md)<br />
+[SSL Config for Node](https://github.com/NikkiNgNguyen/ransomware_cecs378/blob/master/SSLNode.md)<br />
+[Let's Encrypt Tutorial](https://letsencrypt.org/docs/)<br />
+[SSL Labs Test](https://www.ssllabs.com/ssltest/)
 
-=======
-#Ransomware and Cryptography!
-##CECS 378 Nikki Nguyen & Jasmin Agustin
+
+
+
 
 
 
