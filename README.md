@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Ransomware and Cryptography!
 #### CECS 378 Nikki Nguyen & Jasmin Agustin
 
@@ -26,6 +25,5 @@ Take a look at the "SSL Config" tutorials (SSL Config for Nginx as Reverse Proxy
 
 
 
->>>>>>> master
 
 
