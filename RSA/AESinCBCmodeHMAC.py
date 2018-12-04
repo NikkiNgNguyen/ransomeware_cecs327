@@ -24,10 +24,6 @@ def MyencryptMAC(message, EncKey, HMACKey):
     padded_data = padder.update(message) #update(message) adds everything into the context
     padded_data += padder.finalize()
     #finalize() finishes the operation and obtains the remainder of the data
-    '''encrypt with AES in CBC mode
-    creates cipher instance, takes in algorithm, mode, and backend from Cipher library
-    Backend implementations may provide a number of interfaces to support operations such as Symmetric encryption,
-    Message digests (Hashing), and Hash-based message authentication codes (HMAC).'''
     cipher = Cipher(algorithms.AES(EncKey), modes.CBC(iv), backend = default_backend())
     #creates Cipher(encrypt) object
     encryptor = cipher.encryptor()
@@ -74,6 +70,7 @@ def MyfileEncryptMAC(filepath):
     #create new text file containing encryption in folder
     userFilepath = raw_input("please enter a save path for the encrypted file (Do not provide file name or extension): ")
     savepath = userFilepath + "/encrypted_HMAC_" + extension
+    print(savepath)
     try:
         #create new file and write in binary mode
         newFile = open(savepath, 'wb')
@@ -112,7 +109,7 @@ def menu():
                           "3. Exit \n"))
     return userInput
 
-'''def main():
+def main():
     key = os.urandom(KEY_LENGTH)
     while True:
         userInput = menu()
@@ -143,7 +140,7 @@ def menu():
         elif userInput == 3:
             raise SystemExit
 
-main()'''
+#main()
 
 
 '''
@@ -157,6 +154,11 @@ provides a number of interfaces to support operations such as Symmetric encrypti
 and Hash-based message authentification codes (HMAC)
 SHA256() generates an almost unique 256-bit signature for a text (SHA-2 family)
 message digest: a cryptographic has function containing a string of digits created by a one-way hashing formula
+Backend implementations may provide a number of interfaces to support operations such as Symmetric encryption,
+Message digests (Hashing), and Hash-based message authentication codes (HMAC).
+
+encrypt with AES in CBC mode
+creates cipher instance, takes in algorithm, mode, and backend from Cipher library
 Backend implementations may provide a number of interfaces to support operations such as Symmetric encryption,
 Message digests (Hashing), and Hash-based message authentication codes (HMAC).
 
