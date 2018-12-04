@@ -37,7 +37,6 @@ def Myencrypt(message,key):
     return ct, iv
 
 def Mydecrypt(ct,key,iv):
-
     #decrypt with AES in CBC mode
     cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=default_backend())
     #create decryptor object
@@ -50,17 +49,14 @@ def Mydecrypt(ct,key,iv):
 
 def MyfileEncrypt(filepath):
     key = os.urandom(KEY_LENGTH) #generate secret key
-
     #get file extension
     filename,extension = os.path.splitext(filepath)
-
     #open, read, close file
     file = open(filepath)
     message = file.read()
     file.close()
     #call Myencrypt
     ct, iv = Myencrypt(message,key)
-
     #create new text file containing encryption in folder
     userFilepath = raw_input("please enter a save path for the encrypted file (Do not provide file name or extension): ")
     savepathC = userFilepath + "/encrypted_" + extension
@@ -75,23 +71,18 @@ def MyfileEncrypt(filepath):
         print("invalid file path \n")
         userFilepath = raw_input("please enter a save path for the encrypted file (Do not provide file name or extension): ")
 
-
     #return ciphertext message, key, iv, and extension to call in MyfileDecrypt
     return ct, key, iv, extension
 
 #inverse of MyfileEncrypt
 def MyfileDecrypt(ct,key,iv,extension):
-
     #get plaintext
     p = Mydecrypt(ct,key,iv)
-
     # convert message from 64 bytes to string
     p = p.decode()
-
     #create new text file containing decryption in folder
     userFilepath = raw_input("please enter a save path for the decrypted file (Do not provide file name or extension): ")
     savepathD = userFilepath + "/decrypted_" + extension
-
     try:
         #create new file and write in binary mode
         newFileD = open(savepathD, 'wb')
@@ -117,6 +108,7 @@ def main():
     key = os.urandom(KEY_LENGTH)
     while True:
         userInput = menu()
+        #encrypt and decrypt a file in some directory
         if userInput == 1:
             thisFilepath = raw_input("enter an absolute file path: ")
             try:
@@ -126,6 +118,7 @@ def main():
                 print("decryption ready \n")
             except Exception:
                 print("invalid file path \n")
+        #create a message in a file and encrypt that message 
         elif userInput == 2:
             thisFilepath = raw_input("enter an .txt file path: ")
             try:
