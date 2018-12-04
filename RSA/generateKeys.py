@@ -70,7 +70,7 @@ def checkKeys():
             print("Invalid Input. Try again: ")
             userInput = main()
 
-def main():
+'''def main():
     while True:
         userInput = int(input("enter 1 to generate keys (Anything else to quit): "))
         if userInput == 1:
@@ -79,4 +79,4 @@ def main():
         else:
             raise SystemExit
 
-main()
+main()'''
