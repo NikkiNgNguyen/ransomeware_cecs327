@@ -50,8 +50,7 @@ def Mydecrypt(ct,key,iv):
 def MyfileEncrypt(filepath):
     key = os.urandom(KEY_LENGTH) #generate secret key
     #get file extension
-    filename,extension = os.path.splitext(filepath)
-    #open, read, close file
+2    #open, read, close file
     file = open(filepath)
     message = file.read()
     file.close()
@@ -118,7 +117,7 @@ def main():
                 print("decryption ready \n")
             except Exception:
                 print("invalid file path \n")
-        #create a message in a file and encrypt that message 
+        #create a message in a file and encrypt that message
         elif userInput == 2:
             thisFilepath = raw_input("enter an .txt file path: ")
             try:
@@ -127,7 +126,7 @@ def main():
                 textfile.write(fileMessage)
                 textfile.close()
                 ct, iv, key, ext = MyfileEncrypt(thisFilepath)
-                print("encryption ready")
+                print("encryption ready \n")
                 p = MyfileDecrypt(ct, iv, key, ext)
                 print("decryption ready \n")
             except Exception:
