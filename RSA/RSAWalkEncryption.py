@@ -51,7 +51,7 @@ def repositoryWalk():
                     #find . -name '*.txt' -delete
     #***WARNING*** BE VERY CAREFUL YOU ARE IN THE RIGHT DIRECTORY.
     #I do not recommend doing this unless you are sure your cwd is correct
-    os.system("find . -name '*txt' -delete")
+    os.system("find . -name '*.txt' -delete")
 
 
 repositoryWalk()

@@ -41,7 +41,7 @@ def MyRSADecrypt(RSACipher, C, IV, tag, ext, RSA_Privatekey_filepath):
     return p
 
 def main():
-
+    #load
     p = MyRSADecrypt(RSACipher, C, IV, tag, ext, RSA_Privatekey_filepath)
 
-main()
+#main()
