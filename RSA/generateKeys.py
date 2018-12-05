@@ -57,8 +57,9 @@ def checkKeys():
     #if the keys exist, ask the user if they want to remove the key
     else:
         print("Key already exists")
-        removeKeys = raw_input("Do you want to remove existing keys? Y/N: ")
-        if removeKeys in Y_OPT:
+        #removeKeys = raw_input("Do you want to remove existing keys? Y/N: ")
+        return publicKeyPath, privateKeyPath
+        '''if removeKeys in Y_OPT:
             os.remove(privateKeyPath)
             os.remove(publicKeyPath)
             print("private/public keys removed")
@@ -68,7 +69,10 @@ def checkKeys():
             userInput = main()
         else:
             print("Invalid Input. Try again: ")
-            userInput = main()
+            userInput = main()'''
+
+def getKeys():
+    return publicKeyPath, privateKeyPath
 
 def main():
     while True:

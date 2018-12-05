@@ -2,7 +2,7 @@
 #CECS 378 File Encryption with HMAC Assignment
 
 import os, sys, json, base64, subprocess
-from generateKeys import generateKeys, checkKeys
+from generateKeys import generateKeys, checkKeys, getKeys
 from RSAEncryption import MyRSAEncrypt
 from RSADecryption import MyRSADecrypt
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
@@ -32,13 +32,14 @@ def repositoryWalk():
                     jsonFile = myFile.read()
                     data = json.loads(jsonFile)
 
-                    RSACipher = base64.b64encode(data['RSACipher']).decode('ascii')
-                    ct = base64.b64encode(data['ct']).decode('ascii')
-                    iv = base64.b64encode(data['iv']).decode('ascii')
-                    tag = base64.b64encode(data['tag']).decode('ascii')
-                    extension = base64.b64encode(data['extension']).decode('ascii')
-
+                    RSACipher = base64.b64decode(data['RSACipher'].encode('ascii'))
+                    ct = base64.b64decode(data['ct'].encode('ascii'))
+                    iv = base64.b64decode(data['iv'].encode('ascii'))
+                    tag = base64.b64decode(data['tag'].encode('ascii'))
+                    extension = base64.b64decode(data['extension'].encode('ascii'))
+                    RSA_Publickey_filepath, RSA_Privatekey_filepath = checkKeys()
                     p = MyRSADecrypt(RSACipher, ct, iv, tag, extension, RSA_Privatekey_filepath)
+
 
                     filename,ext = os.path.splitext(f)
                     decryptedFile = os.path.join(root + filename + "_decrypted_" + extension)
